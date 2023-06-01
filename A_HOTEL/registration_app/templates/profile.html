@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %} Profile {% endblock %}
+
+
+{% block content %}
+{% load static %}
+<h1> My Profile </h1>
+<p> Имя: {{ profile.image }} </p>
+<p> Имя: {{ profile.first_name }} </p>
+<p> Фамилия: {{ profile.last_name }} </p>
+<p> Имя пользователя: {{ profile.username }} </p>
+<p> Почта: {{ profile.email }} </p>
+{% endblock content %}

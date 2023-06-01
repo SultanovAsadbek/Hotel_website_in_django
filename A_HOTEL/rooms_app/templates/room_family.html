@@ -1,0 +1,17 @@
+{% extends 'room_base.html' %}
+
+
+{% comment  %} ------ Статус комнат ------ {% endcomment %}
+{% block r_status %} {{ family.status }} {% endblock %}
+
+{% comment  %} ------ Стоимость комнат ------ {% endcomment %}
+{% block r_amount %} {{ family.decimail }} {% endblock %}
+
+{% comment  %} ------ Картинки комнат ------ {% endcomment %}
+{% block r_img1 %} <img class="active" src="{{family.image1.url}}" alt="Image 1"> {% endblock %}
+{% block r_img2 %} <img src="{{family.image2.url}}" alt="Image 2"> {% endblock %}
+{% block r_img3 %} <img src="{{family.image3.url}}" alt="Image 3"> {% endblock %}
+{% block r_img4 %} <img src="{{family.image1.url}}" alt="Image 4"> {% endblock %}
+
+{% comment  %} ------ Описание комнат ------ {% endcomment %}
+{% block r_description %} {{ family.description|linebreaksbr }} {% endblock %}

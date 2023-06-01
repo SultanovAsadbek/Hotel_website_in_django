@@ -1,0 +1,67 @@
+body {
+  /* background-image: url("https://i.pinimg.com/originals/2b/65/59/2b655908bdf8e457dc8518321eeeefeb.jpg"); */
+  background-size: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../icons/fontawesome-webfont.eot?v=4.0.3');
+    src: url('../icons/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../icons/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../icons/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../icons/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.wraperM {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: FontAwesome;
+  padding-top: 10px;
+}
+
+.itemM {
+  width: 100%;
+  padding-top: 10px;
+  text-align: left;
+  justify-content: left;
+  /* margin: 20px; */
+}
+
+.itemM iframe {
+  width: 100%;
+  height: 400px;
+}
+
+.wraper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 5px;
+  background-color: #ffffffa4;
+}
+
+.item {
+  max-width: 55%;
+  text-align: center;
+  margin: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #666;
+}
+.contact h1{
+    color: #666;
+    font-family: FontAwesome;
+    
+}
+
+.contact p{
+    font-size: 25px;
+}
