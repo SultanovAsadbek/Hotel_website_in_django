@@ -1,0 +1,19 @@
+{% extends 'room_base.html' %}
+
+
+{% comment  %} ------ Статус комнат ------ {% endcomment %}
+{% block r_status %} {{ twin.status }} {% endblock %}
+
+{% comment  %} ------ Стоимость комнат ------ {% endcomment %}
+{% block r_amount %} {{ twin.decimail }} {% endblock %}
+
+{% block url%} <p>URL of this page: {{ request.get_full_path }}</p> {% endblock %}
+{% comment  %} ------ Картинки комнат ------ {% endcomment %}
+{% block r_img1 %} <img class="active" src="{{twin.image1.url}}" alt="Image 1"> {% endblock %}
+{% block r_img2 %} <img src="{{twin.image2.url}}" alt="Image 2"> {% endblock %}
+{% block r_img3 %} <img src="{{twin.image3.url}}" alt="Image 3"> {% endblock %}
+{% block r_img4 %} <img src="{{twin.image4.url}}" alt="Image 4"> {% endblock %}
+{% block r_img5 %} <img src="{{twin.image1.url}}" alt="Image 5"> {% endblock %}
+
+{% comment  %} ------ Описание комнат ------ {% endcomment %}
+{% block r_description %} {{ twin.description|linebreaksbr }} {% endblock %}
