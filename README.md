@@ -96,33 +96,15 @@ pip install -r requirements.txt
 > Создадим таблицы в базе данных, затем производим миграцию
 
 ```
-python manage.py makemigrations ToDoApp
+python manage.py makemigrations
 ```
 
 ```
-python manage.py migrate ToDoApp
+python manage.py migrate
 ```
 
 
 **Шаг 9:**
-> Создадим файл ```.env``` в котором будут хранятся [пременные среды](https://dev.to/jakewitcher/using-env-files-for-environment-variables-in-python-applications-55a1), в директорию ```ToDoList-Django-main\aToDoList\```.
-<br> В файл ```.env``` вставляем следующие данные:
-
-```
-#
-# _.env_ файле хранятся конфиденциальные данные.
-#
-
-# -------- settings.py --------
-SECRET_KEY=django-insecure-jlj&%yxsr5q9_85eoyr0ek7qvi5zn8$37bzu_vg!q$%7y*wm1_
-DEBUG=False
-
-# -------- views.py --------
-API_KEY=3ad14039ad77957668cd1735d7272232
-``` 
-
-
-**Шаг 10:**
 > Запускаем локальный сервер:
 
 ```
