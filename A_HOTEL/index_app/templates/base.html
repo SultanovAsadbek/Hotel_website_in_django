@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html> 
+<html>
+	<head>
+		<meta charset="utf-8">		
+		<title>{% block title%}{% endblock %}</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+		<link rel="stylesheet" href="{% static 'css/base.css' %}">
+		<link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+		<link rel="stylesheet" href="{% static 'css/sky-mega-menu.css' %}">
+		
+
+	</head>
+	  <body>
+	<body class="bg-cyan">
+	<aside>
+        <div class="body">		
+			<!-- mega menu -->
+			<ul class="sky-mega-menu sky-mega-menu-anim-scale sky-mega-menu-response-to-icons">
+				<!-- home -->
+				<li>
+					<a href="{% url 'home' %}"><i class="fa fa-single fa-home"></i></a>
+				</li>
+				<!--/ home -->
+				
+				<!-- about -->
+				<li aria-haspopup="true">
+					<a href="#"><i></i>Гостиница</a>
+                    <div class="grid-container3">
+						<ul>
+							<li><a href="#"><i></i>О гостинице</a></li>
+							<li><a href="#"><i></i>О Разработчике сайта</a></li>
+							<li><a href="#"><i></i>О Начльстве</a></li>
+						</ul>
+					</div>
+					
+				</li>
+				<!--/ about -->
+				
+				<!-- rooms -->
+				<li aria-haspopup="true">
+					<a href="#"><i></i>Номера и цены</a>
+					<div class="grid-container3">
+						<ul>
+							<li><a href="{% url 'twin' %}"><i></i>Двухместный номер TWIN </a></li>
+							<li><a href="{% url 'prestige' %}"><i></i>Двухместный номер PRESTIGE </a></li>
+							<li><a href="{% url 'deluxe' %}"><i></i>Двухместный номер DELUXE</a></li>
+							<li><a href="{% url 'family' %}"><i></i>Двухместный номер FAMILY</a></li>
+							<li><a href="{% url 'triple' %}"><i></i>Трёхместный номер</a></li>
+							<li><a href="{% url 'quadruple' %}"><i></i>Четырёхместный номер</a></li>
+						</ul>
+					</div>
+				</li>
+				<!--/ rooms -->
+				
+				<!-- feedback -->
+				<li aria-haspopup="true">
+					<a href="{% url 'feedback' %}"><i></i>Контакты</a>
+				</li class="right">
+				<!--/ feedback -->
+				
+                {% if user.is_authenticated %}
+                    <!-- logout form -->
+                        <li aria-haspopup="true" class="right">
+				        	<a href="{% url 'profile' %}" title="Мой профиль"><i class="fa fa-user"></i>{{user.first_name.title}} {{user.last_name.title}}</a>
+				        </li>
+                        <li aria-haspopup="true" class="right">
+				        	<a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i>Выход</a>
+				        </li>
+                    <!--logout form -->
+                {% else %}
+				    <!-- register form -->
+				    <li aria-haspopup="true" class="right">
+				    	<a href="{% url 'register' %}"><i class="fa fa-lock"></i>Регистрация</a>
+				    </li>
+				    <!--/ register form -->
+
+				    <!-- login form -->
+				    <li aria-haspopup="true" class="right">
+				    	<a href="{% url 'login'%}"><i class="fa fa-sign-in"></i>Войти</a>
+				    </li>
+                    <!--/ login form -->
+                {% endif %}
+				
+			</ul>
+			<!--/ mega menu -->
+            <center>
+            {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert--{{message.tags}}">
+                    <p class="alert__message"> {{ message }} </p>
+                <button class="alert__close">&#x2716</button>
+                </div>
+                {% endfor %}
+            {% endif %}
+            </center>	
+		</div>
+
+    </aside>
+        {% block content %}
+        {% endblock %}
+
+    </body>
+    <script src='{% static "js/base.js" %}'> </script>
+</html>
