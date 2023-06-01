@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block title %} Rooms List {% endblock %}
+
+{% block content%}
+{% load static %}
+<link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+<link rel="stylesheet" href="{% static 'css/room_base.css' %}">
+{% comment %} <link rel="stylesheet" href="{% static 'registration_app/css/logReg.css' %}"> {% endcomment %}
+<body>
+<main>
+    <div class="headST">
+        {% block url%} {% endblock %}
+        <h1>{% block r_status%}{% endblock %}</h1>
+        <h3>{% block r_amount%}{% endblock %} сум<sub>/сутки </h3>
+    </div>
+    <div class="container">
+        <div class="grid product">
+          <div class="column-xs-12 column-md-7">
+            <div class="product-gallery">
+              <div class="product-image">
+                {% block r_img1%}{% endblock %}
+              </div>
+              <ul class="image-list">
+                <li class="image-item">{% block r_img2 %}{% endblock %}</li>
+                <li class="image-item">{% block r_img3 %}{% endblock %}</li>
+                <li class="image-item">{% block r_img4 %}{% endblock %}</li>
+                <li class="image-item">{% block r_img5 %}{% endblock %}</li>
+              </ul>
+            </div> 
+          </div> 
+          <div class="column-xs-12 column-md-5">
+            <div class="wraper">    
+                <div class="item"> 
+                    <div class="body">		
+                        <!-- mega menu -->
+                        <ul class="sky-mega-menu sky-mega-menu-anim-scale sky-mega-menu-response-to-icons">
+                            <!-- register form -->
+                            <li aria-haspopup="true" class="right">
+                                <a href="#_"><i class="fa fa-lock"></i>Забронирования</a>
+                                {% block bookForm %}    
+                                <form method="POST" action="{% url 'book_room'%}">
+                                        {% csrf_token %}
+                                        <fieldset>	
+                                        <div class="row">
+                                            <section class="col col-6">
+                                                <label class="input">
+                                                    <i class="fa fa-append fa-user"></i>
+                                                    {{ form.name }} 
+                                                </label>
+                                            </section>
+                                            <section class="col col-6">
+                                                <label class="input">
+                                                    <i class="fa fa-append fa-user"></i>
+                                                    {{ form.surname }}
+                                                </label>
+                                            </section>
+                                        </div>
+                                            <section>
+                                                <label class="input">
+                                                    <i class="fa fa-append fa fa-phone"></i>
+                                                    {{ form.telephone_number }}
+                                                </label>
+                                            </section>
+                                            <section>
+                                                <label class="input">
+                                                    <i class="fa fa-append fa-envelope-o"></i>
+                                                    {{ form.email }}
+                                                </label>
+                                            </section>
+                                            <section>
+                                                <label class="input">
+                                                    <i class="fa fa-append fa-th-list"></i>
+                                                    {{ form.book_room }}
+                                                </label>
+                                            </section>
+                                            <div class="row">
+                                                <section class="col col-6">
+                                                    <label class="input">
+                                                        <i class="fa fa-append fa-calendar"></i>
+                                                        {{ form.date_in }}
+                                                    </label>
+                                                </section>
+                                                <section class="col col-6">
+                                                    <label class="input">
+                                                        <i class="fa fa-append fa-calendar"></i>
+                                                        {{ form.date_out }}
+                                                    </label>
+                                                </section>
+                                            </div>
+                                            <section>
+                                                <label class="textarea">
+                                                    <i class="fa fa-append fa-comments-o"></i>
+                                                    {{ form.commentary }}
+                                                </label>
+                                            </section>
+                                        
+                                            <button type="submit" class="button">Забронировать</button>
+                                        </fieldset>						
+                                    </form>
+                                    {% endblock %}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+  </div>
+</main>
+        <div class="description"> 
+            <p>{% block r_description %}{% endblock %}</p>
+        </div>
+</body>
+
+<script  src="{% static 'js/room_base.js' %}"></script>
+
+{% endblock content%}

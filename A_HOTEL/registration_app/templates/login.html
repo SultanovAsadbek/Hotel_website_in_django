@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %} Register {% endblock %}
+
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+<link rel="stylesheet" href="{% static 'css/sky-mega-menu.css' %}">
+<link rel="stylesheet" href="{% static 'css/logReg.css' %}">
+
+{% comment %} <body style="background-image: url('{% static "img/logReg.jpg"%}')";> {% endcomment %}
+<div class="wraper">    
+    <div class="item"> 
+        <div class="body">		
+			<!-- mega menu -->
+			<ul class="sky-mega-menu sky-mega-menu-anim-scale sky-mega-menu-response-to-icons">
+                <!-- login form -->
+                <li aria-haspopup="true" class="right">
+                    <a href="#_"><i class="fa fa-sign-in"></i>Войти</a>
+                        <form method="POST" action="{% url 'login'%}">
+                          {% csrf_token %}
+                            <fieldset>								
+                                <section>
+                                    <label class="input">
+                                        <i class="fa fa-append fa-user"></i>
+                                        {{ form.username }} 
+                                    </label>
+                                </section> 
+
+                                <section>
+                                    <label class="input">
+                                        <i class="fa fa-append fa-lock"></i>
+                                        {{ form.password }}
+                                    </label>
+                                </section>
+
+                                <button type="submit" class="button">Войти</button>
+                            </fieldset>						
+                        </form>
+                    </div>
+                </li>
+                <!--/ login form -->
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

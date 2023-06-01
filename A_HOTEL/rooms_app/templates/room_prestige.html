@@ -1,0 +1,18 @@
+{% extends 'room_base.html' %}
+
+
+{% comment  %} ------ Статус комнат ------ {% endcomment %}
+{% block r_status %} {{ prestige.status }} {% endblock %}
+
+{% comment  %} ------ Стоимость комнат ------ {% endcomment %}
+{% block r_amount %} {{ prestige.decimail }} {% endblock %}
+
+{% comment  %} ------ Картинки комнат ------ {% endcomment %}
+{% block r_img1 %} <img class="active" src="{{prestige.image1.url}}" alt="Image 1"> {% endblock %}
+{% block r_img2 %} <img src="{{prestige.image2.url}}" alt="Image 2"> {% endblock %}
+{% block r_img3 %} <img src="{{prestige.image3.url}}" alt="Image 3"> {% endblock %}
+{% block r_img4 %} <img src="{{prestige.image1.url}}" alt="Image 4"> {% endblock %}
+
+{% comment %} {%block bookForm %} {% endblock %} {% endcomment %}
+{% comment  %} ------ Описание комнат ------ {% endcomment %}
+{% block r_description %} {{ prestige.description|linebreaksbr }} {% endblock %}
