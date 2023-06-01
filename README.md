@@ -80,7 +80,7 @@ python -m venv venv
 > Переходим в директорию проекта
 
 ```
-cd ToDoList-Django-main
+cd Hotel_website_in_django
 ```
 
 
